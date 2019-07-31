@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">Wattpad</string>
+
+
+    <string name="nba_teams">:: NBA Teams ::</string>
+    <string name="players">:: Players ::</string>
+    <string name="number_of_wins">number of wins</string>
+    <string name="number_of_losses">number of losses</string>
+    <string name="wins">wins</string>
+    <string name="losses">losses</string>
+    <string name="first_name">first name</string>
+    <string name="last_name">last name</string>
+    <string name="full_name">full name</string>
+    <string name="position">position</string>
+    <string name="number">number</string>
+    <string name="separator_bar">-</string>
+    <string name="detail_team">Detail Team</string>
+    <string name="number_label">Number:</string>
+    <string name="position_label">Position:</string>
+</resources>
