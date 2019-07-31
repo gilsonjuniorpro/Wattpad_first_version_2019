@@ -38,9 +38,9 @@ class StoryAdapter(items : List<StoryDTO>, mContext: Context) : RecyclerView.Ada
         holder.layBase.setOnClickListener { openDetailStory(list[position]) }
     }
 
-    private fun openDetailStory(story: StoryDTO) {
+    private fun openDetailStory(storyDTO: StoryDTO) {
         var it = Intent(context, DetailStoryActivity::class.java)
-        it.putExtra("story", story)
+        it.putExtra("storyDTO", storyDTO)
         context.startActivity(it)
     }
 

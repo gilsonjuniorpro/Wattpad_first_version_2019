@@ -9,6 +9,10 @@ import com.wattpad.ca.pojo.User
 interface UserDAO {
     @Insert
     fun insert(user: User)
+
     @Query("SELECT * FROM tb_user ORDER BY name ASC")
     fun getAllUsers(): List<User>
+
+    @Query("DELETE FROM tb_user")
+    fun deleteAll()
 }

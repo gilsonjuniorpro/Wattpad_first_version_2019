@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.wattpad.ca.R
 import com.wattpad.ca.adapter.StoryAdapter
+import com.wattpad.ca.controller.StoryController
 import com.wattpad.ca.data.WattpadDatabase
 import com.wattpad.ca.dto.ResponseDTO
 import com.wattpad.ca.dto.StoryDTO
@@ -23,13 +24,9 @@ import kotlinx.coroutines.withContext
 
 class MainActivity : AppCompatActivity() {
 
-    private var db: WattpadDatabase? = null
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
-        db = WattpadDatabase.getDatabase(this)!!
 
         CoroutineScope(IO).launch {
             callApiRequest()
@@ -44,21 +41,9 @@ class MainActivity : AppCompatActivity() {
 
 
     private suspend fun callApiRequest() {
-        val objResponse = StoryService.listStories() // wait until job is done
+        val objResponse = StoryController.listStories(this) // wait until job is done
 
-        if (objResponse != null && objResponse.stories!!.isNotEmpty()) {
-            var id = objResponse!!.stories!![0].id
-            var title = objResponse!!.stories!![0].title
-            var userDTO = objResponse!!.stories!![0].user
-            var cover = objResponse!!.stories!![0].cover
-
-
-            var user = User(userDTO?.name!!, userDTO?.avatar!!, userDTO?.fullname!!)
-
-            var dto = Story(id!!, title!!, user!!, cover!!)
-
-            db!!.storyDao().insert(dto)
-            var all = db!!.storyDao().getAllStories()
+        if (objResponse != null && objResponse.isNotEmpty()) {
             setTextOnMainThread(objResponse, null)
         } else {
             setTextOnMainThread(null, "Couldn't get Result")
@@ -66,21 +51,20 @@ class MainActivity : AppCompatActivity() {
     }
 
 
-    private fun setNewText(objResponse: ResponseDTO?, message: String?){
+    private fun setNewText(stories: List<StoryDTO>?, message: String?){
         progress.visibility = View.GONE
         if(!TextUtils.isEmpty(message)) {
-            tvResult.text = objResponse?.nextUrl
+            tvEmptyView.text = "empty"
         }else{
-            tvResult.text = message
-            var list = objResponse!!.stories as MutableList<StoryDTO>?
-            listStories.adapter = StoryAdapter(list!!, this)
+            tvEmptyView.text = message
+            listStories.adapter = StoryAdapter(stories!!, this)
         }
     }
 
 
-    private suspend fun setTextOnMainThread(objResponse: ResponseDTO?, message: String?) {
+    private suspend fun setTextOnMainThread(stories: List<StoryDTO>?, message: String?) {
         withContext (Main) {
-            setNewText(objResponse, message)
+            setNewText(stories, message)
         }
     }
 }
