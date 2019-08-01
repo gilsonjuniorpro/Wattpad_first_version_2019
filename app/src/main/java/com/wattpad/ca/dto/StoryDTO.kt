@@ -8,5 +8,9 @@ data class StoryDTO (
     var id: String?,
     var title : String?,
     var user : UserDTO?,
-    var cover : String?
+    var cover : String?,
+    var rating : Int?,
+    var voteCount : Int?,
+    var description : String?,
+    val tags : List<String>?
 ): Parcelable

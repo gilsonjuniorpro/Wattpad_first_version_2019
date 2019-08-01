@@ -19,10 +19,13 @@ object Utils {
             var title = storyDTO.title
             var userDTO = storyDTO.user
             var cover = storyDTO.cover
+            var rating = storyDTO.rating
+            var voteCount = storyDTO.voteCount
+            var description = storyDTO.description
 
             var user = User(userDTO?.name!!, userDTO?.avatar!!, userDTO?.fullname!!)
 
-            Story(id!!, title!!, user!!, cover!!)
+            Story(id!!, title!!, user!!, cover!!, rating!!, voteCount!!, description!!)
         }else{
             return null
         }
@@ -49,10 +52,13 @@ object Utils {
             var title = story.title
             var user = story.user
             var cover = story.cover
+            var rating = story.rating
+            var voteCount = story.voteCount
+            var description = story.description
 
             var userDTO = UserDTO(user?.name!!, user?.avatar!!, user?.fullname!!)
 
-            StoryDTO(id!!, title!!, userDTO!!, cover!!)
+            StoryDTO(id!!, title!!, userDTO!!, cover!!, rating!!, voteCount!!, description!!, null)
         }else{
             return null
         }
