@@ -1,6 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#008577</color>
-    <color name="colorPrimaryDark">#00574B</color>
-    <color name="colorAccent">#D81B60</color>
+    <color name="colorPrimary">#ff8017</color>
+    <color name="colorPrimaryDark">#d75f00</color>
+    <color name="colorAccent">#3e3b36</color>
+
+    <!-- Screens background color-->
+    <color name="bg_screen1">#fb9101</color>
+    <color name="bg_screen2">#00b2b2</color>
+    <color name="bg_screen3">#e9750e</color>
+    <color name="bg_screen4">#008d8e</color>
+    <color name="bg_screen5">#d75f00</color>
+
+    <!-- dots inactive colors -->
+    <color name="intro_bullet_inactive">#FFFFFF</color>
+    <!-- dots active colors -->
+    <color name="intro_bullet_active">#000000</color>
+    <array name="array_intro_bullet_inactive">
+        <item>@color/intro_bullet_inactive</item>
+        <item>@color/intro_bullet_inactive</item>
+        <item>@color/intro_bullet_inactive</item>
+        <item>@color/intro_bullet_inactive</item>
+        <item>@color/intro_bullet_inactive</item>
+    </array>
+    <array name="array_intro_bullet_active">
+        <item>@color/intro_bullet_active</item>
+        <item>@color/intro_bullet_active</item>
+        <item>@color/intro_bullet_active</item>
+        <item>@color/intro_bullet_active</item>
+        <item>@color/intro_bullet_active</item>
+    </array>
 </resources>

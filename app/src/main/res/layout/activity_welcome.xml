@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:showIn="@layout/activity_welcome">
+    <androidx.viewpager.widget.ViewPager
+            android:id="@+id/intro_view_pager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    <LinearLayout
+            android:id="@+id/intro_bullets"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/intro_bullet_size"
+            android:layout_alignParentBottom="true"
+            android:layout_centerInParent="true"
+            android:layout_margin="10dp"
+            android:gravity="bottom"
+            android:orientation="horizontal">
+    </LinearLayout>
+    <View
+            android:id="@+id/sep_line"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_above="@id/intro_bullets"
+            android:alpha=".8"
+            android:background="@color/intro_bullet_inactive" />
+    <Button
+            android:id="@+id/btNext"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:background="@null"
+            android:text="@string/next_button_title"
+            android:textColor="@color/intro_bullet_active"
+            android:textSize="@dimen/intro_button_fontsize" />
+    <Button
+            android:id="@+id/btSkip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentBottom="true"
+            android:background="@null"
+            android:text="@string/skip_button_title"
+            android:textColor="@color/intro_bullet_inactive"
+            android:textSize="@dimen/intro_button_fontsize" />
+</RelativeLayout>

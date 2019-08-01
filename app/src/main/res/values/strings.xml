@@ -1,20 +1,45 @@
 <resources>
     <string name="app_name">Wattpad</string>
+    <string name="label_title">Last Stories</string>
 
+    <string name="slide_1_title">Stories You’ll Love</string>
+    <string name="slide_1_desc">
+        Whatever you’re into, there is something you’ll love on Wattpad. \n
+        And if you can’t find exactly what you’re looking for, you have the power to create it yourself.
+    </string>
 
-    <string name="nba_teams">:: NBA Teams ::</string>
-    <string name="players">:: Players ::</string>
-    <string name="number_of_wins">number of wins</string>
-    <string name="number_of_losses">number of losses</string>
-    <string name="wins">wins</string>
-    <string name="losses">losses</string>
-    <string name="first_name">first name</string>
-    <string name="last_name">last name</string>
-    <string name="full_name">full name</string>
-    <string name="position">position</string>
-    <string name="number">number</string>
-    <string name="separator_bar">-</string>
-    <string name="detail_team">Detail Team</string>
-    <string name="number_label">Number:</string>
-    <string name="position_label">Position:</string>
+    <string name="slide_2_title">Storytelling Redefined</string>
+    <string name="slide_2_desc">
+        Wattpad takes everything you love about storytelling, and turns it into a social, on-the-go experience.
+        The result is a one-of-a-kind adventure in creation and discovery.
+        Today, the global Wattpad community is made up of more than 65 million people.
+        We’re proudly based in Toronto, Canada, but Wattpad stories transcend borders, interests, and language.
+    </string>
+
+    <string name="slide_3_title">A Captivated Audience</string>
+    <string name="slide_3_desc">
+        In a world of 7-second attention spans, people everywhere still long to be immersed in content that matters to them.
+        The Wattpad community collectively spends an incredible 15 billion minutes each month using Wattpad.
+    </string>
+
+    <string name="slide_4_title">Freedom to Discover and Create</string>
+    <string name="slide_4_desc">
+        Wattpad gives people from around the world access to an audience of millions, and connects them with content they can’t find anywhere else.
+        You can discover the things that speak to you, or choose to create them from scratch.
+        It’s the freedom to express yourself with an authentic voice, and the knowledge that you will be heard.
+    </string>
+
+    <string name="slide_5_title">Read offline</string>
+    <string name="slide_5_desc">
+        After your first use, the Wattpad App will provide you some content for using offline, as soon as you connect to the internet
+        again and open the App, new data will be loaded.
+    </string>
+
+    <string name="play_again_desc">To see the welcome slider again, goto Settings -> apps -> Wattpad -> clear data</string>
+    <string name="play_again">Play Again</string>
+
+    <string name="next_button_title">NEXT</string>
+    <string name="skip_button_title">SKIP</string>
+    <string name="done_button_title">FINISH</string>
+
 </resources>
