@@ -59,10 +59,10 @@ I know I can use the Retrofit library to make calls to the API but for this proj
 
 I get the response from the server in JSON format and use GSON to convert the response to the mapped Object, like this:
 ```
-fun listStories(): ResponseDTO? {
-    val json = URL(Constants.URL_STORIES).readText()
-    return Gson().fromJson(json, ResponseDTO::class.java)
-}
+    fun listStories(): ResponseDTO? {
+        val json = URL(Constants.URL_STORIES).readText()
+        return Gson().fromJson(json, ResponseDTO::class.java)
+    }
 ```
 
 After getting the object mapped the adapter is populated with the information provided for the API, if the user clicks on any item from the list a new Activity will be loaded and the object Story will be sent to this new Activity as a parameter.
