@@ -31,9 +31,9 @@
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
             android:layout_alignParentBottom="true"
-            android:background="@null"
+            android:background="@android:color/transparent"
             android:text="@string/next_button_title"
-            android:textColor="@color/intro_bullet_active"
+            android:textColor="@color/intro_bullet_inactive"
             android:textSize="@dimen/intro_button_fontsize" />
     <Button
             android:id="@+id/btSkip"
@@ -41,7 +41,7 @@
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_alignParentBottom="true"
-            android:background="@null"
+            android:background="@android:color/transparent"
             android:text="@string/skip_button_title"
             android:textColor="@color/intro_bullet_inactive"
             android:textSize="@dimen/intro_button_fontsize" />
