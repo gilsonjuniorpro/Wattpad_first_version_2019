@@ -16,5 +16,6 @@ data class Story(
     @ColumnInfo(name = "cover") val cover: String,
     @ColumnInfo(name = "rating") val rating: Int,
     @ColumnInfo(name = "votecount") val voteCount: Int,
-    @ColumnInfo(name = "description") val description: String
+    @ColumnInfo(name = "description") val description: String,
+    @ColumnInfo(name = "tags") val tags: String
 )

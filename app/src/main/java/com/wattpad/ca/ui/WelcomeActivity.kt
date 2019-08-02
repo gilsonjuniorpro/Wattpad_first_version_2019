@@ -32,17 +32,18 @@ class WelcomeActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        val greetLayout = layoutInflater.inflate(R.layout.activity_welcome, null)
-        setContentView(greetLayout)
+        val welcomeLayout = layoutInflater.inflate(R.layout.activity_welcome, null)
+        setContentView(welcomeLayout)
         prefManager = PrefManager(this)
         if (!prefManager!!.isFirstTimeLaunch) {
             applicationStartup()
             finish()
         }
-        introViewPager = greetLayout.intro_view_pager
-        introBulletsLayout = greetLayout.intro_bullets
-        btSkip = greetLayout.btSkip
-        btNext = greetLayout.btNext
+        introViewPager = welcomeLayout.intro_view_pager
+        introBulletsLayout = welcomeLayout.intro_bullets
+        btSkip = welcomeLayout.btSkip
+        btNext = welcomeLayout.btNext
+
         //Get the intro slides
         introSliderLayouts = intArrayOf(
             R.layout.welcome_slide1,
@@ -50,6 +51,7 @@ class WelcomeActivity : AppCompatActivity() {
             R.layout.welcome_slide3,
             R.layout.welcome_slide4,
             R.layout.welcome_slide5)
+
         // adding bottom introBullets
         makeIIntroBullets(0)
         introViewPagerAdapter = IntroScreenViewPagerAdapter()
@@ -108,6 +110,7 @@ class WelcomeActivity : AppCompatActivity() {
     private var introViewPagerListener: ViewPager.OnPageChangeListener = object : ViewPager.OnPageChangeListener {
         override fun onPageSelected(position: Int) {
             makeIIntroBullets(position)
+
             /*Based on the page position change the button text*/
             if (position == introSliderLayouts!!.size - 1) {
                 btNext!!.text = getString(R.string.done_button_title)

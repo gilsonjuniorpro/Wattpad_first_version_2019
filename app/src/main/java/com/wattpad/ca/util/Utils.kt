@@ -12,20 +12,19 @@ object Utils {
 
     fun convertDtoToEntity(dto: Any): Any? {
         return if (dto is StoryDTO) {
-            // this part was inserted because kotlin didn't recognize the inference
-            var storyDTO = dto as StoryDTO
+            var id = dto.id
+            var title = dto.title
+            var userDTO = dto.user
+            var cover = dto.cover
+            var rating = dto.rating
+            var voteCount = dto.voteCount
+            var description = dto.description
 
-            var id = storyDTO.id
-            var title = storyDTO.title
-            var userDTO = storyDTO.user
-            var cover = storyDTO.cover
-            var rating = storyDTO.rating
-            var voteCount = storyDTO.voteCount
-            var description = storyDTO.description
+            var tags: String? = dto?.tags.toString()
 
             var user = User(userDTO?.name!!, userDTO?.avatar!!, userDTO?.fullname!!)
 
-            Story(id!!, title!!, user!!, cover!!, rating!!, voteCount!!, description!!)
+            Story(id!!, title!!, user!!, cover!!, rating!!, voteCount!!, description!!, tags!!)
         }else{
             return null
         }
@@ -45,20 +44,25 @@ object Utils {
 
     fun convertEntityToDTO(entity: Any): Any? {
         return if (entity is Story) {
-            // this part was inserted because kotlin didn't recognize the inference
-            var story = entity as Story
+            var id = entity.id
+            var title = entity.title
+            var user = entity.user
+            var cover = entity.cover
+            var rating = entity.rating
+            var voteCount = entity.voteCount
+            var description = entity.description
 
-            var id = story.id
-            var title = story.title
-            var user = story.user
-            var cover = story.cover
-            var rating = story.rating
-            var voteCount = story.voteCount
-            var description = story.description
+            var listTags = mutableListOf<String>()
+
+            if(entity.tags != null){
+                var list = entity.tags.removePrefix("[").removeSuffix("]")
+                var result: List<String> = list.split(",").map { it.trim() }
+                result.forEach { listTags.add(it) }
+            }
 
             var userDTO = UserDTO(user?.name!!, user?.avatar!!, user?.fullname!!)
 
-            StoryDTO(id!!, title!!, userDTO!!, cover!!, rating!!, voteCount!!, description!!, null)
+            StoryDTO(id!!, title!!, userDTO!!, cover!!, rating!!, voteCount!!, description!!, listTags!!)
         }else{
             return null
         }

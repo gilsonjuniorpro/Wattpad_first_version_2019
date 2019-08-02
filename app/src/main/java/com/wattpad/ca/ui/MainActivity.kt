@@ -1,20 +1,15 @@
 package com.wattpad.ca.ui
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.TextUtils
 import android.view.View
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.wattpad.ca.R
 import com.wattpad.ca.adapter.StoryAdapter
 import com.wattpad.ca.controller.StoryController
-import com.wattpad.ca.data.WattpadDatabase
-import com.wattpad.ca.dto.ResponseDTO
 import com.wattpad.ca.dto.StoryDTO
-import com.wattpad.ca.pojo.Story
-import com.wattpad.ca.pojo.User
-import com.wattpad.ca.service.StoryService
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers.IO
