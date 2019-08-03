@@ -1,5 +1,6 @@
 package com.wattpad.ca.ui
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -24,10 +25,12 @@ class DetailStoryActivity : AppCompatActivity() {
                 tvUserName.text = storyDTO.user!!.name
                 tvUserFullname.text = storyDTO.user!!.fullname
 
-                Glide.with(this)
-                    .load(storyDTO.user!!.avatar)
-                    .circleCrop()
-                    .into(ivUserAvatar)
+                if(storyDTO.user!!.avatar != null) {
+                    Glide.with(this)
+                        .load(storyDTO.user!!.avatar)
+                        .circleCrop()
+                        .into(ivUserAvatar)
+                }
             }
 
             if(storyDTO.cover != null) {
@@ -45,5 +48,13 @@ class DetailStoryActivity : AppCompatActivity() {
             listTags.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL ,false)
             listTags.adapter = TagsAdapter(storyDTO.tags!!, this)
         }
+    }
+
+
+    override fun onBackPressed() {
+        super.onBackPressed()
+        var it = Intent(baseContext, MainActivity::class.java)
+        startActivity(it)
+        finish()
     }
 }

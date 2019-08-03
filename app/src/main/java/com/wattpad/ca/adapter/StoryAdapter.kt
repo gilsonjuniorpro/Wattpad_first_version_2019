@@ -29,12 +29,13 @@ class StoryAdapter(items : List<StoryDTO>, mContext: Context) : RecyclerView.Ada
                         list[position].user!!.fullname else list[position].user!!.name
 
         holder.tvFullname.text = name
+
         var urlImage = list[position].cover
-
-        Glide.with(context)
-            .load(urlImage)
-            .into(holder.ivCover)
-
+        if(urlImage != null){
+            Glide.with(context)
+                .load(urlImage)
+                .into(holder.ivCover)
+        }
         holder.layBase.setOnClickListener { openDetailStory(list[position]) }
     }
 

@@ -72,6 +72,8 @@ class WelcomeActivity : AppCompatActivity() {
         // making notification bar transparent
         setTransparentStatusBar()
     }
+
+
     private fun makeIIntroBullets(currentPage: Int) {
         var arraySize = introSliderLayouts!!.size
         introBullets = Array(arraySize) { textboxInit() }

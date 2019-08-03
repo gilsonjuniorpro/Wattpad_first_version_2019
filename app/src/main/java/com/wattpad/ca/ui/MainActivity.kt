@@ -10,6 +10,7 @@ import com.wattpad.ca.R
 import com.wattpad.ca.adapter.StoryAdapter
 import com.wattpad.ca.controller.StoryController
 import com.wattpad.ca.dto.StoryDTO
+import com.wattpad.ca.util.Utils
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers.IO
@@ -23,15 +24,22 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        CoroutineScope(IO).launch {
-            callApiRequest()
-        }
-
         var mLayoutManager = LinearLayoutManager(this)
         var mDividerItemDecoration = DividerItemDecoration(
             listStories.context, mLayoutManager.orientation)
         listStories.layoutManager = mLayoutManager
         listStories.addItemDecoration(mDividerItemDecoration)
+
+        setupApiCall()
+        ivOffline.setOnClickListener{ setupApiCall() }
+    }
+
+
+    private fun setupApiCall(){
+        progress.visibility = View.VISIBLE
+        CoroutineScope(IO).launch {
+            callApiRequest()
+        }
     }
 
 
@@ -48,6 +56,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun setNewText(stories: List<StoryDTO>?, message: String?){
         progress.visibility = View.GONE
+        if(Utils.hasConnection(this)) ivOffline.visibility = View.GONE else ivOffline.visibility = View.VISIBLE
         if(!TextUtils.isEmpty(message)) {
             tvEmptyView.text = "empty"
         }else{

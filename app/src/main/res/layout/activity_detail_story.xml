@@ -20,10 +20,10 @@
                 app:layout_constraintStart_toStartOf="parent" android:layout_marginLeft="16dp"
                 android:layout_marginStart="16dp" android:layout_marginTop="8dp"
                 app:layout_constraintTop_toBottomOf="@+id/ivCover" android:textSize="18sp"
-                android:textColor="@color/colorAccent" android:textStyle="bold" tools:text="Title"/>
+                android:textColor="@color/colorAccent" android:textStyle="bold" tools:text="@string/label_title"/>
         <ImageView
-                android:layout_width="170dp"
-                android:layout_height="250dp" app:srcCompat="@mipmap/ic_launcher"
+                android:layout_width="@dimen/width_cover_size"
+                android:layout_height="@dimen/height_cover_size" app:srcCompat="@drawable/ic_cover_base"
                 android:id="@+id/ivCover" android:layout_marginTop="16dp"
                 app:layout_constraintTop_toTopOf="parent" app:layout_constraintEnd_toEndOf="parent"
                 android:layout_marginEnd="8dp" android:layout_marginRight="8dp"
@@ -32,7 +32,7 @@
         <FrameLayout
                 android:id="@+id/frame"
                 android:layout_width="match_parent"
-                android:layout_height="150dp"
+                android:layout_height="@dimen/height_frame"
                 android:foregroundGravity="center"
                 android:background="@color/colorAccent"
                 app:layout_constraintTop_toTopOf="parent" app:layout_constraintEnd_toEndOf="parent"
@@ -44,13 +44,13 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:id="@+id/tvUserName"
-                tools:text="name" app:layout_constraintStart_toEndOf="@+id/ivUserAvatar"
+                tools:text="@string/label_name" app:layout_constraintStart_toEndOf="@+id/ivUserAvatar"
                 android:layout_marginStart="8dp" android:layout_marginLeft="8dp" android:layout_marginEnd="50dp"
                 app:layout_constraintEnd_toEndOf="parent" android:layout_marginRight="50dp"
                 app:layout_constraintTop_toTopOf="@+id/ivUserAvatar"/>
         <ImageView
-                android:layout_width="50dp"
-                android:layout_height="50dp" app:srcCompat="@mipmap/ic_launcher"
+                android:layout_width="@dimen/avatar_size"
+                android:layout_height="@dimen/avatar_size" app:srcCompat="@drawable/ic_user_base"
                 android:id="@+id/ivUserAvatar" android:layout_marginTop="8dp"
                 app:layout_constraintTop_toBottomOf="@+id/tvTitle" app:layout_constraintStart_toStartOf="parent"
                 android:layout_marginLeft="50dp" android:layout_marginStart="50dp"/>
@@ -59,7 +59,7 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/tvUserFullname" app:layout_constraintStart_toEndOf="@+id/ivUserAvatar"
                 android:layout_marginLeft="8dp" android:layout_marginStart="8dp"
-                app:layout_constraintTop_toBottomOf="@+id/tvUserName" android:layout_marginTop="8dp" tools:text="fullname"
+                app:layout_constraintTop_toBottomOf="@+id/tvUserName" android:layout_marginTop="8dp" tools:text="@string/label_fullname"
                 app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="50dp"
                 android:layout_marginRight="50dp"/>
         <TextView
@@ -69,15 +69,15 @@
                 app:layout_constraintStart_toStartOf="parent"
                 android:layout_marginLeft="16dp" android:layout_marginStart="16dp" app:layout_constraintEnd_toEndOf="parent"
                 android:layout_marginEnd="16dp" android:layout_marginRight="16dp" android:layout_marginTop="16dp"
-                app:layout_constraintTop_toBottomOf="@+id/imageView2"
-                tools:text="description"/>
+                app:layout_constraintTop_toBottomOf="@+id/ivStar"
+                tools:text="@string/label_description"/>
         <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/tvRating"
                 tools:text="0" android:layout_marginTop="8dp"
                 app:layout_constraintTop_toBottomOf="@+id/ivUserAvatar"
-                app:layout_constraintStart_toEndOf="@+id/imageView2"
+                app:layout_constraintStart_toEndOf="@+id/ivStar"
                 android:gravity="left" android:layout_marginLeft="4dp" android:layout_marginStart="4dp"/>
         <TextView
                 android:layout_width="wrap_content"
@@ -87,16 +87,16 @@
                 android:gravity="end"
                 app:layout_constraintEnd_toEndOf="@+id/ivCover"/>
         <ImageView
-                android:layout_width="20dp"
-                android:layout_height="20dp" app:srcCompat="@drawable/ic_star"
-                android:id="@+id/imageView2" android:layout_marginTop="8dp"
+                android:layout_width="@dimen/star_size"
+                android:layout_height="@dimen/star_size" app:srcCompat="@drawable/ic_star"
+                android:id="@+id/ivStar" android:layout_marginTop="8dp"
                 app:layout_constraintTop_toBottomOf="@+id/ivUserAvatar"
                 app:layout_constraintStart_toStartOf="@+id/ivCover"
         />
         <ImageView
-                android:layout_width="20dp"
-                android:layout_height="20dp" app:srcCompat="@drawable/ic_count"
-                android:id="@+id/imageView3"
+                android:layout_width="@dimen/chart_size"
+                android:layout_height="@dimen/chart_size" app:srcCompat="@drawable/ic_count"
+                android:id="@+id/ivChart"
                 app:layout_constraintEnd_toStartOf="@+id/tvVoteCount" android:layout_marginEnd="4dp"
                 android:layout_marginRight="4dp" android:layout_marginTop="8dp"
                 app:layout_constraintTop_toBottomOf="@+id/ivUserAvatar"/>

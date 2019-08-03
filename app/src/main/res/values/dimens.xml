@@ -22,4 +22,13 @@
     <dimen name="intro_comment_margin">20dp</dimen>
     <dimen name="intro_image_width">300dp</dimen>
     <dimen name="intro_image_height">450dp</dimen>
+    <dimen name="icon_offline">35dp</dimen>
+    <dimen name="width_cover_list_size">48dp</dimen>
+    <dimen name="height_cover_list_size">75dp</dimen>
+    <dimen name="width_cover_size">170dp</dimen>
+    <dimen name="height_cover_size">250dp</dimen>
+    <dimen name="height_frame">150dp</dimen>
+    <dimen name="avatar_size">50dp</dimen>
+    <dimen name="star_size">20dp</dimen>
+    <dimen name="chart_size">20dp</dimen>
 </resources>

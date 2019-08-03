@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">Wattpad</string>
-    <string name="label_title">Last Stories</string>
+    <string name="label_last_stories">Last Stories</string>
+    <string name="label_title">Title</string>
 
     <string name="slide_1_title">Stories You’ll Love</string>
     <string name="slide_1_desc">
@@ -41,5 +42,9 @@
     <string name="next_button_title">NEXT</string>
     <string name="skip_button_title">SKIP</string>
     <string name="done_button_title">FINISH</string>
+    <string name="label_name">name</string>
+    <string name="label_fullname">fullname</string>
+    <string name="label_description">description</string>
+    <string name="detail_story">Detail Story</string>
 
 </resources>

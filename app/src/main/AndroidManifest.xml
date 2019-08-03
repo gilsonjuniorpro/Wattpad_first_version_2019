@@ -15,7 +15,7 @@
 
         <activity
                 android:name=".ui.DetailStoryActivity"
-                android:label="detail activity"
+                android:label="@string/detail_story"
                 android:launchMode="singleTop"
                 android:parentActivityName=".ui.MainActivity"
                 android:screenOrientation="portrait"
